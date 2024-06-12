@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mental</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+        }
+        .meditation-item {
+            background: #fff;
+            margin-bottom: 20px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .meditation-item img {
+            width: 190px;
+            height: 190px;
+            border-radius: 8px;
+            margin-right: 20px;
+        }
+        .meditation-item h3 {
+            margin: 0;
+            font-size: 1.5em;
+        }
+        .meditation-item p {
+            margin: 10px 0;
+        }
+        .audio-player {
+            display: flex;
+            align-items: center;
+        }
+        .audio-player button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+        .audio-player button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Meditation Sessions</h1>
+        <div class="meditation-item">
+            <img src="m1.webp" alt="Meditation 1">
+            <div>
+                <h3>Meditation 1: Morning Calm</h3>
+                <p>Start your day with a calming morning meditation.</p>
+                <div class="audio-player">
+                    <button onclick="playAudio('audio1')">Play</button>
+                    <audio id="audio1" src="a1.mp3"></audio>
+                </div>
+            </div>
+        </div>
+        <div class="meditation-item">
+            <img src="m2.avif" alt="Meditation 2">
+            <div>
+                <h3>Meditation 2: Stress Relief</h3>
+                <p>Relieve stress and find peace with this meditation.</p>
+                <div class="audio-player">
+                    <button onclick="playAudio('audio2')">Play</button>
+                    <audio id="audio2" src="a2.mp3"></audio>
+                </div>
+            </div>
+        </div>
+        <div class="meditation-item">
+            <img src="m3.webp" alt="Meditation 3">
+            <div>
+                <h3>Meditation 3: Deep Relaxation</h3>
+                <p>Achieve deep relaxation and unwind with this session.</p>
+                <div class="audio-player">
+                    <button onclick="playAudio('audio3')">Play</button>
+                    <audio id="audio3" src="a3.mp3"></audio>
+                </div>
+            </div>
+        </div>
+        <div class="meditation-item">
+            <img src="m4.webp" alt="Meditation 4">
+            <div>
+                <h3>Meditation 4: Sleep Aid</h3>
+                <p>Prepare for a restful night with this sleep meditation.</p>
+                <div class="audio-player">
+                    <button onclick="playAudio('audio4')">Play</button>
+                    <audio id="audio4" src="a2.mp3"></audio>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function playAudio(id) {
+            var audio = document.getElementById(id);
+            if (audio.paused) {
+                audio.play();
+            } else {
+                audio.pause();
+            }
+        }
+    </script>
+</body>
+</html>

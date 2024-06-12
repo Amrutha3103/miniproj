@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WELLNESS 360</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" 
+    href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+<style>
+    body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f0f0f0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .video-container {
+            width: 100%;
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+        }
+        video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            outline: none;
+        }
+        nav button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 -4px 8px rgba(0,0,0,0.1);
+            height: auto;
+            bottom: 0;
+            left: 0;
+        }
+        .box {
+            
+            width: 100px;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .box img {
+            width: 100%;
+            
+        }
+        .box-content {
+            padding: 10px;
+        }
+        .box h2 {
+            font-size: 1.2em;
+            margin: 10px 0 5px;
+        }
+        .box p {
+            font-size: 0.9em;
+            margin: 5px 0 0;
+        }
+        .login-popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgb(81, 158, 207);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            z-index: 999;
+        }
+        .login-popup.show {
+            display: block;
+        }
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+        }
+        button{
+            display: block;
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-weight: 100;
+            font-size: medium;
+            text-align: center;
+            width: 70px;
+            height: 50px;
+            background-color: #007BFF;
+            color: white;
+            padding: 15px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .signup-button {
+            display: block;
+            margin-top: 10px;
+            text-align: center;
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+        #btn {
+            display: block;
+            margin-top: 10px;
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+</style>
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">
+           <h1>Wellness360</h1>
+        </a>
+                <ul class="navbar" >
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="physical.html">Physical</a></li>
+                    <li><a href="mental.html">Mental</a></li>
+                    <li><a href="diet.html">Diet</a></li>
+                </ul>
+                <button id="loginButton">Login</button>
+        </div>
+    </header>
+    <div class="video-container">
+        <video controls="false" autoplay muted loop>
+            <source src="wellness360.mp4" type="video/mp4">
+            
+        </video>
+    </div><br><br>
+    <section id="feature" class="section-p1">
+        <div class="fe-box">
+            <img height="300px" width="600px" src="mental_wellbeing.webp" alt="" srcset="">
+            <a href="mental.html"><h5>Mental Well-being</h5></a>
+        </div>
+        <div class="fe-box">
+            <img height="300px" width="600px" src="physical_fitness.jpg" alt="" srcset="">
+            <a href="physical.html"><h5>Physical_fitness</h5></a>
+        </div>
+        <div class="fe-box">
+            <img height="300px" width="600px" src="diett.webp" alt="" srcset="">
+            <a href="diet.html"><h5>Healthy diet==Healthy life</h5></a>
+        </div>
+        
+      
+    </section>
+
+    <div id="loginPopup" class="login-popup">
+        <span class="close" onclick="closeLoginPopup()">&times;</span>
+        <!-- Add your login form content here -->
+        <h2>Login</h2>
+        <form>
+            <label for="username">Username:</label><br>
+            <input type="text" id="username" name="username"><br>
+            <label for="password">Password:</label><br>
+            <input type="password" id="password" name="password"><br><br>
+            <input type="submit" value="Login" id="btn">
+        </form>
+        <a href="signup.html" class="signup-button">Sign up for free</a>
+    </div>
+
+    <script>
+        // Function to open the login popup
+        function openLoginPopup() {
+            document.getElementById("loginPopup").classList.add("show");
+        }
+
+        // Function to close the login popup
+        function closeLoginPopup() {
+            document.getElementById("loginPopup").classList.remove("show");
+        }
+
+        // Event listener to open the login popup when the login button in the navbar is clicked
+        document.getElementById("loginButton").addEventListener("click", function() {
+            openLoginPopup();
+        });
+    </script>
+
+    
+</body>
+</html>

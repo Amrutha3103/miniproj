@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fdffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .signup-container {
+            background-color: beige;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            border: black;
+            border-color: black;
+        }
+        .signup-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .signup-container label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        .signup-container input[type="text"],
+        .signup-container input[type="email"],
+        .signup-container input[type="password"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .signup-container input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .signup-container input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        .signup-container a {
+            display: block;
+            text-align: center;
+            margin-top: 10px;
+            color: #007BFF;
+            text-decoration: none;
+        }
+        .signup-container a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="signup-container">
+        <h2>Sign Up</h2>
+        <form id="signupForm">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" required>
+            
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+            
+            <label for="confirm-password">Confirm Password</label>
+            <input type="password" id="confirm-password" name="confirm-password" required>
+            
+            <input type="submit" value="Sign Up">
+        </form>
+        <a href="index.html">Already have an account? Login here</a>
+    </div>
+
+    <script>
+        document.getElementById('signupForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            // Simulate form submission and validation
+            setTimeout(function() {
+                // Redirect to the previous page
+                window.history.back();
+            }, 1000); // Delay for demonstration purposes (e.g., simulate server processing time)
+        });
+    </script>
+</body>
+</html>
